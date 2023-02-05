@@ -21,7 +21,7 @@ def colour_box_badness(screen,dif,i,j,values):
         pygame.draw.rect(screen, (255, 0, 0), (i * dif, j * dif, dif + 1, dif + 1))
 
 
-def simulated_annealing(screen,font,dif,grid,schedule=None,max_t=2000,tau = 100,epsilon = 0.00001, n=3):
+def simulated_annealing(screen,font,dif,grid,schedule=None,max_t=500,tau = 100,epsilon = 0.00001, n=3):
     if schedule == None:
         iterable = (math.exp(-i/tau) for i in range(max_t))
         schedule = np.fromiter(iterable,float)
